@@ -22,7 +22,7 @@ students = {
 }
 
 
-class Student(Resource):
+class StudentResource(Resource):
     parser = reqparse.RequestParser()
     parser.add_argument(
         'username',
