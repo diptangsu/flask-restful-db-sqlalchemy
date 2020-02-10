@@ -50,7 +50,7 @@ class StudentResource(Resource):
     def post(self):
         '''POST /students/ -> add a new student
         '''
-        data = Student.parser.parse_args()
+        data = StudentResource.parser.parse_args()
         student_id = len(students) + 1
         student_name = data.get('username')
 
@@ -79,7 +79,7 @@ class StudentResource(Resource):
         if student_id is not None:
             student = students.get(student_id)
             if student:
-                data = Student.parser.parse_args()
+                data = StudentResource.parser.parse_args()
                 student.update(data)
                 return student
         abort(404)
