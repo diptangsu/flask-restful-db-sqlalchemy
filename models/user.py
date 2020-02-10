@@ -1,12 +1,29 @@
-class User:
+from db import db
 
-    _users = 0
+
+class User(db.Model):
+
+    __tablename__ = 'users'
+
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80))
+    password = db.Column(db.String(80))
 
     def __init__(self, username, password):
-        User._users += 1
-        self.id = User._users
         self.username = username
         self.password = password
 
     def __repr__(self):
         return f'{self.id}: {self.username}'
+
+    @classmethod
+    def get(cls, **kwargs):
+        return cls.query.filter(**kwargs).first()
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
