@@ -18,7 +18,7 @@ class User(db.Model):
 
     @classmethod
     def get(cls, **kwargs):
-        return cls.query.filter(**kwargs).first()
+        return cls.query.filter_by(**kwargs).first()
 
     def save(self):
         db.session.add(self)

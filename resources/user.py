@@ -36,8 +36,6 @@ class UserResource(Resource):
 
         username = data.get('username')
         password = data.get('password')
-        print('AAAAAAAAAAAAAAAAAAAAAAAAA')
-        print(username, password)
 
         if username and password:
             user = User(username, password)

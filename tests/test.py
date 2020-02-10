@@ -22,13 +22,13 @@ def print_response(response):
 
 
 # create user
-response = requests.post(URL_CREATE_USER, json={
-    'username': 'Dip',
-    'password': 'dip'
-}, headers={
-    'Content-Type': 'application/json'
-})
-print_response(response)
+# response = requests.post(URL_CREATE_USER, json={
+#     'username': 'Dip',
+#     'password': 'dip'
+# }, headers={
+#     'Content-Type': 'application/json'
+# })
+# print_response(response)
 
 # authenticate user
 response = requests.post(URL_AUTH, json={
