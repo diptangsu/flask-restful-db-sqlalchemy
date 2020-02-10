@@ -63,28 +63,28 @@ print_response(response)
 
 # check POST student
 response = requests.post(URL_ALL_STUDENTS, json={
-    'username': 'Dip',
+    'name': 'Dip',
     'age': 23
 }, headers=headers)
 print_response(response)
 
 # check POST student fail
 response = requests.post(URL_ALL_STUDENTS, json={
-    'username': 'Dip',
+    'name': 'Dip',
     'age': 23
 }, headers=headers)
 print_response(response)
 
 # check PUT student
 response = requests.put(URL_STUDENT_1, json={
-    'username': 'Diptangsu',
+    'name': 'Diptangsu',
     'age': 23
 }, headers=headers)
 print_response(response)
 
 # check PUT student fail
 response = requests.put(URL_STUDENT_111111, json={
-    'username': 'Dip',
+    'name': 'Dip',
     'age': 23
 }, headers=headers)
 print_response(response)

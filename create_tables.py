@@ -11,4 +11,14 @@ with sqlite3.connect('data.db') as conn:
         )
     '''
     cursor.execute(create_users_table)
+
+    create_students_table = '''
+        CREATE TABLE IF NOT EXISTS Students (
+            id INTEGER PRIMARY KEY,
+            name TEXT,
+            age TEXT
+        )
+    '''
+    cursor.execute(create_students_table)
+
     conn.commit()
