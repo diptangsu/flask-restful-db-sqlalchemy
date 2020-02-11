@@ -25,7 +25,10 @@ class Student(db.Model):
 
     @classmethod
     def get(cls, **kwargs):
-        return cls.query.filter_by(**kwargs).first()
+        if kwargs:
+            return cls.query.filter_by(**kwargs).first()
+        else:
+            return cls.query.all()
 
     def save(self):
         db.session.add(self)

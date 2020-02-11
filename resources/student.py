@@ -27,7 +27,10 @@ class StudentResource(Resource):
         if student_id is not None:
             return Student.get(id=student_id).json() or abort(404)
         else:
-            return Student.get()
+            return [
+                student.json()
+                for student in Student.get()
+            ]
 
     # @jwt_required()
     def post(self):
@@ -58,12 +61,12 @@ class StudentResource(Resource):
                 if age:
                     student.age = age
                 student.save()
-                return student
+                return student.json()
         else:
             if name and age:
                 student = Student(name, age)
                 student.save()
-                return student, 201
+                return student.json(), 201
 
     # @jwt_required()
     def delete(self, student_id=None):
