@@ -5,7 +5,7 @@ from pprint import pprint
 BASE_URL = 'http://127.0.0.1:5000'
 
 URL_ALL_STUDENTS = BASE_URL + '/students/'
-URL_STUDENT_1 = BASE_URL + '/students/1/'
+URL_STUDENT_1 = BASE_URL + '/students/3/'
 URL_STUDENT_111111 = BASE_URL + '/students/111111/'
 URL_AUTH = BASE_URL + '/auth'
 URL_CREATE_USER = BASE_URL + '/users/'

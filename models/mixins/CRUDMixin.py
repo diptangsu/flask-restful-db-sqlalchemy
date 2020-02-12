@@ -1,3 +1,6 @@
+from db import db
+
+
 class CRUDMixin:
     '''Mixin class to add CRUD operations to Model classes
     '''

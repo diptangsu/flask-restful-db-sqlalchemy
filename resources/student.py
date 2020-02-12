@@ -54,7 +54,7 @@ class StudentResource(Resource):
         age = data.get('age')
 
         if student_id is not None:
-            student = Student.get(student_id)
+            student = Student.get(id=student_id)
             if student:
                 if name:
                     student.name = name
