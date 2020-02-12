@@ -25,7 +25,7 @@ class Student(db.Model, CRUDMixin):
             'name': self.name,
             'age': self.age,
             'subjects': [
-                Subject.query.get(s.subject_id).json()
+                s.subject.json()
                 for s in Study.query.filter_by(student_id=self.id)
             ]
         }
