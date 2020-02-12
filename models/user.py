@@ -14,5 +14,5 @@ class User(db.Model, CRUDMixin):
         self.username = username
         self.password = password
 
-    def __str__(self):
-        ...
+    def __repr__(self):
+        return f'{self.username}'
