@@ -2,17 +2,15 @@ from db import db
 from models.mixins.CRUDMixin import CRUDMixin
 
 
-class Student(db.Model, CRUDMixin):
+class Subject(db.Model, CRUDMixin):
 
-    __tablename__ = 'Students'
+    __tablename__ = 'Subjects'
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
-    age = db.Column(db.Integer)
 
-    def __init__(self, name, age):
+    def __init__(self, name):
         self.name = name
-        self.age = age
 
     def __repr__(self):
         return f'{self.id}: {self.name}'
@@ -21,6 +19,4 @@ class Student(db.Model, CRUDMixin):
         return {
             'id': self.id,
             'name': self.name,
-            'age': self.age,
-            'subjects': []
         }

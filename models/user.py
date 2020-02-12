@@ -1,7 +1,8 @@
 from db import db
+from models.mixins.CRUDMixin import CRUDMixin
 
 
-class User(db.Model):
+class User(db.Model, CRUDMixin):
 
     __tablename__ = 'Users'
 
@@ -12,18 +13,3 @@ class User(db.Model):
     def __init__(self, username, password):
         self.username = username
         self.password = password
-
-    def __repr__(self):
-        return f'{self.id}: {self.username}'
-
-    @classmethod
-    def get(cls, **kwargs):
-        return cls.query.filter_by(**kwargs).first()
-
-    def save(self):
-        db.session.add(self)
-        db.session.commit()
-
-    def delete(self):
-        db.session.delete(self)
-        db.session.commit()

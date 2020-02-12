@@ -5,6 +5,7 @@ from flask_jwt import JWT
 from auth.security import authenticate, identity
 from resources.student import StudentResource
 from resources.user import UserResource
+from resources.subject import SubjectResource
 
 
 app = Flask(__name__)
@@ -27,8 +28,12 @@ api.add_resource(
 )
 api.add_resource(
     UserResource,
-    '/user/',
     '/users/<int:user_id>/'
+)
+api.add_resource(
+    SubjectResource,
+    '/subjects/',
+    '/subjects/<int:subject_id>/'
 )
 
 

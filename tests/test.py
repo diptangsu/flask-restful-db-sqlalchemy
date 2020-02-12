@@ -8,7 +8,7 @@ URL_ALL_STUDENTS = BASE_URL + '/students/'
 URL_STUDENT_1 = BASE_URL + '/students/1/'
 URL_STUDENT_111111 = BASE_URL + '/students/111111/'
 URL_AUTH = BASE_URL + '/auth'
-URL_CREATE_USER = BASE_URL + '/user/'
+URL_CREATE_USER = BASE_URL + '/users/'
 
 
 def print_response(response):

@@ -27,7 +27,7 @@ class UserResource(Resource):
         return User.get(id=user_id)
 
     def post(self, user_id=None):
-        '''POST /user/ --> add new user
+        '''POST /users/ --> add new user
         '''
         if user_id:
             abort(404)
