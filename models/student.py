@@ -1,5 +1,7 @@
 from db import db
 from models.mixins.CRUDMixin import CRUDMixin
+from models.subject import Subject
+from models.study import Study
 
 
 class Student(db.Model, CRUDMixin):
@@ -22,5 +24,8 @@ class Student(db.Model, CRUDMixin):
             'id': self.id,
             'name': self.name,
             'age': self.age,
-            'subjects': []
+            'subjects': [
+                Subject.query.get(s.subject_id).json()
+                for s in Study.query.filter_by(student_id=self.id)
+            ]
         }
