@@ -4,6 +4,7 @@ from db import db
 class Study(db.Model):
     __tablename__ = 'Studies'
 
+    id = db.Column(db.Integer, primary_key=True)
     student_id = db.Column(db.Integer, db.ForeignKey('Student.id'))
     subject_id = db.Column(db.Integer, db.ForeignKey('Subject.id'))
 
