@@ -9,9 +9,8 @@ from resources.subject import SubjectResource
 
 
 app = Flask(__name__)
-app.secret_key = '$%^uke45f78v4ei#$%^&ydfg12734vgn35y65o2!@#$&^'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config.from_pyfile('config.py')
+
 api = Api(app)
 jwt = JWT(app, authenticate, identity)
 
