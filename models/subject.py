@@ -3,7 +3,6 @@ from models.mixins.CRUDMixin import CRUDMixin
 
 
 class Subject(db.Model, CRUDMixin):
-
     __tablename__ = 'Subjects'
 
     id = db.Column(db.Integer, primary_key=True)

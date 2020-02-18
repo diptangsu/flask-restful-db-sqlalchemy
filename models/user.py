@@ -3,7 +3,6 @@ from models.mixins.CRUDMixin import CRUDMixin
 
 
 class User(db.Model, CRUDMixin):
-
     __tablename__ = 'Users'
 
     id = db.Column(db.Integer, primary_key=True)

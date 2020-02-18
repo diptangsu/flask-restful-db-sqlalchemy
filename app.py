@@ -1,16 +1,13 @@
 from flask import Flask
-from flask_restful import Api
-from flask_jwt import JWT
-
-from resources.student import StudentResource
-from resources.user import UserResource
-from resources.subject import SubjectResource
-
 from flask_admin import Admin
+from flask_jwt import JWT
+from flask_restful import Api
 
-from auth.security import authenticate, identity
-from db import db
 from admin import add_admin_views
+from auth.security import authenticate, identity
+from resources.student import StudentResource
+from resources.subject import SubjectResource
+from resources.user import UserResource
 
 
 app = Flask(__name__)

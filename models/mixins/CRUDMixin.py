@@ -4,6 +4,7 @@ from db import db
 class CRUDMixin:
     '''Mixin class to add CRUD operations to Model classes
     '''
+
     @classmethod
     def get(cls, **kwargs):
         if kwargs:

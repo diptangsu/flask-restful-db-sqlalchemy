@@ -4,7 +4,6 @@ from models.user import User
 
 
 class UserResource(Resource):
-
     parser = reqparse.RequestParser()
     parser.add_argument(
         'username',

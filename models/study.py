@@ -1,9 +1,7 @@
 from db import db
-from models.mixins import CRUDMixin
 
 
 class Study(db.Model):
-
     __tablename__ = 'Studies'
 
     id = db.Column(db.Integer, primary_key=True)

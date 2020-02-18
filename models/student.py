@@ -1,11 +1,9 @@
 from db import db
 from models.mixins.CRUDMixin import CRUDMixin
-from models.subject import Subject
 from models.study import Study
 
 
 class Student(db.Model, CRUDMixin):
-
     __tablename__ = 'Students'
 
     id = db.Column(db.Integer, primary_key=True)
